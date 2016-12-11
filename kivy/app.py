@@ -570,6 +570,7 @@ class App(EventDispatcher):
             applied. Note that :meth:`build` is called after :attr:`load_kv`
             has been called.
         '''
+        print "LOAD_KV START"
         # Detect filename automatically if it was not specified.
         if filename:
             filename = resource_find(filename)
@@ -598,6 +599,7 @@ class App(EventDispatcher):
         root = Builder.load_file(rfilename)
         if root:
             self.root = root
+        print "LOAD_KV END"
         return True
 
     def get_application_name(self):
