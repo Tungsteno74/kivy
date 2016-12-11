@@ -801,6 +801,7 @@ class App(EventDispatcher):
         if not self.built:
             self.load_config()
             self.load_kv(filename=self.kv_file)
+            print "LOAD_Kv OUT"
             root = self.build()
             if root:
                 self.root = root
