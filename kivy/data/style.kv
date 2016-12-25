@@ -713,11 +713,6 @@
     canvas.after:
         PopMatrix
         
-[AccordionItemTitle@Label]:
-    canvas.before:
-        Color:
-            rgba: ctx.item.color if ctx.item.color else self.color
-
 <AccordionItem>:
     container: container
     container_title: container_title
