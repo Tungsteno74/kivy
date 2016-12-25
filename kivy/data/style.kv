@@ -697,7 +697,7 @@
     disabled_background: ctx.item.background_disabled_normal if ctx.item.collapse else ctx.item.background_disabled_selected
     canvas.before:
         Color:
-            rgba: self.disabled_color if self.disabled else ctx.item.color if ctx.item.color else self.color
+            rgba: self.disabled_color if self.disabled else self.color
         BorderImage:
             source: self.disabled_background if self.disabled else self.normal_background
             pos: self.pos
@@ -712,7 +712,11 @@
             xy: -self.center_x, -self.center_y
     canvas.after:
         PopMatrix
-
+        
+[AccordionItemTitle@Label]:
+    canvas.before:
+        Color:
+            rgba: ctx.item.color if ctx.item.color else self.color
 
 <AccordionItem>:
     container: container
