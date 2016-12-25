@@ -697,7 +697,7 @@
     disabled_background: ctx.item.background_disabled_normal if ctx.item.collapse else ctx.item.background_disabled_selected
     canvas.before:
         Color:
-            rgba: self.disabled_color if self.disabled else self.color
+            rgba: self.disabled_color if self.disabled else ctx.item.color
         BorderImage:
             source: self.disabled_background if self.disabled else self.normal_background
             pos: self.pos
